@@ -10,7 +10,7 @@ import UIKit
 import CoreBluetooth
 
 
-class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralManagerDelegate,CBPeripheralDelegate {
+class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralManagerDelegate,CBPeripheralDelegate, UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate {
 
     // MARK: - Globals
     
@@ -50,19 +50,27 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralMa
 
     }
     
-    @IBAction func refreshPressed(sender: UIButton) {
-        myCentralManager.stopScan()
-        refreshArrays()
-        startScanning()
-        
-    }
+
     
     // MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         advertiseNewName(myTextField.text)
         putPeripheralManagerIntoMainQueue()
+
         
+        self.tableView.separatorColor = UIColor(red: 224/255, green: 224/255, blue: 224/255, alpha: 1.0)
+        self.tableView.addPullToRefresh({ [weak self] in
+            // some code
+            
+            sleep(1)
+           // self?.texts.shuffle()
+            //self?.tableView.reloadData()
+            self!.myCentralManager.stopScan()
+            self!.refreshArrays()
+            self!.startScanning()
+            //self?.tableView.stopPullToRefresh()
+            })
 
     }
 
@@ -72,6 +80,10 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralMa
     }
     
     // MARK: - Helper Functions
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        self.tableView.fixedPullToRefreshViewForDidScroll()
+    }
     
     func updateStatusText(passedString: String){
       //  statusText.text = passedString + "\r" + statusText.stringValue
@@ -92,6 +104,7 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralMa
     }
     
     func refreshArrays(){
+        
         
         fullPeripheralArray.removeAll(keepCapacity: false)
         cleanAndSortedArray.removeAll(keepCapacity: false)
@@ -205,6 +218,7 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralMa
             CBAdvertisementDataLocalNameKey: "Ghost \(nameString): \(passedString)",
             CBAdvertisementDataManufacturerDataKey: "Hello anufacturerDataKey",
             CBAdvertisementDataServiceUUIDsKey: [theUUid],]
+        println(nameString)
         
         // Start Advertising The Packet
         myPeripheralManager?.startAdvertising(dataToBeAdvertised)
@@ -350,6 +364,7 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralMa
         let myTuple = (myUUIDString, myRSSIString, "others: \(myNameString)", "\(myMessageString)" )
         myPeripheralDictionary[myTuple.0] = myTuple
         
+        
         // Clean Array
         fullPeripheralArray.removeAll(keepCapacity: false)
         
@@ -409,7 +424,8 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralMa
             cell.textLabel?.text = "\(cleanAndSortedArray[indexPath.row].1)" + "  \(cleanAndSortedArray[indexPath.row].2)"
             cell.detailTextLabel?.text = cleanAndSortedArray[indexPath.row].3
             
-            return cell}
+            return cell
+        }
         
     }
     
