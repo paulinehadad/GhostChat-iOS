@@ -12,7 +12,7 @@ import UIKit
 import CoreBluetooth
 
 
-class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralManagerDelegate,CBPeripheralDelegate, UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate {
+class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralManagerDelegate,CBPeripheralDelegate, UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate, UITextFieldDelegate {
 
     // MARK: - Globals
     
@@ -52,6 +52,10 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralMa
 
     }
     
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return false
+    }
 
     
     // MARK: - ViewDidLoad
@@ -407,6 +411,8 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralMa
         }
         
     }
+    
+    
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let nameString = nameField.text
