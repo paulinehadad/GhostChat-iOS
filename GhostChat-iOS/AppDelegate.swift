@@ -3,8 +3,8 @@
 //  GhostChat-iOS
 //
 //  Created by GrownYoda on 4/26/15.
-// Edited by Pauline Hadad
-//  Copyright (c) 2015 yuryg. All rights reserved.
+//  Edited by Pauline Hadad
+//  Copyright (c) 2015 ph. All rights reserved.
 //
 
 import UIKit

@@ -17,10 +17,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hC3-CC-y27">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hC3-CC-y27">
                                 <rect key="frame" x="-5" y="101" width="605" height="453"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="sectionIndexColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" red="0.0" green="0.78039222959999999" blue="0.75294125079999996" alpha="1" colorSpace="deviceRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="redraw" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="chatCell" textLabel="idA-uW-R5j" detailTextLabel="X0d-nq-bXa" rowHeight="90" style="IBUITableViewCellStyleSubtitle" id="Bx5-nn-Cca">
@@ -31,7 +31,7 @@
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="-100  BLE Device Name Here" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="idA-uW-R5j">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="LaoSangamMN" family="Lao Sangam MN" pointSize="16"/>
-                                                    <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="UUID: 0000-0000-0000-0000-0000        Other Infromation" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="X0d-nq-bXa">
@@ -51,13 +51,12 @@
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="-47  Not Important Device" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DEt-3a-4BP">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" name="LaoSangamMN" family="Lao Sangam MN" pointSize="15"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.0" green="0.78039222959999999" blue="0.75294125079999996" alpha="1" colorSpace="deviceRGB"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -70,7 +69,6 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="285" id="w6X-bL-JcO"/>
                                 </constraints>
-                                <color key="textColor" white="0.85850123359999997" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="LaoSangamMN" family="Lao Sangam MN" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="widthClass=compact">
@@ -101,7 +99,6 @@
                                     <constraint firstAttribute="width" constant="110" id="9wQ-Dg-hfu"/>
                                     <constraint firstAttribute="width" constant="121" id="qyh-gQ-Luv"/>
                                 </constraints>
-                                <color key="textColor" white="0.85850123359999997" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="LaoSangamMN" family="Lao Sangam MN" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <variation key="default">
@@ -116,7 +113,7 @@
                                     </mask>
                                 </variation>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="isk-yC-YM7">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="isk-yC-YM7">
                                 <rect key="frame" x="377" y="63" width="191" height="30"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -183,15 +180,15 @@
                                 <exclude reference="ArX-eE-JSy"/>
                                 <exclude reference="bAs-3O-ffG"/>
                                 <exclude reference="gOd-Ui-T0n"/>
+                                <exclude reference="a0i-mv-PsG"/>
+                                <exclude reference="aHu-zz-r5h"/>
+                                <exclude reference="anE-Cp-HGF"/>
+                                <exclude reference="Wfs-Ue-hGJ"/>
+                                <exclude reference="ja6-RE-RSZ"/>
                                 <exclude reference="7xq-1m-hNq"/>
                                 <exclude reference="fem-5P-izz"/>
                                 <exclude reference="lGg-3x-eqK"/>
                                 <exclude reference="oUC-2w-kFc"/>
-                                <exclude reference="Wfs-Ue-hGJ"/>
-                                <exclude reference="ja6-RE-RSZ"/>
-                                <exclude reference="a0i-mv-PsG"/>
-                                <exclude reference="aHu-zz-r5h"/>
-                                <exclude reference="anE-Cp-HGF"/>
                                 <exclude reference="Hj6-Ov-un5"/>
                             </mask>
                         </variation>
@@ -209,20 +206,20 @@
                                 <exclude reference="dRr-58-g6M"/>
                                 <exclude reference="f4p-Nf-gdc"/>
                                 <include reference="gOd-Ui-T0n"/>
-                                <exclude reference="12U-2s-zNR"/>
-                                <include reference="7xq-1m-hNq"/>
-                                <include reference="fem-5P-izz"/>
-                                <include reference="lGg-3x-eqK"/>
-                                <include reference="oUC-2w-kFc"/>
-                                <exclude reference="Vkv-2Q-v73"/>
-                                <include reference="Wfs-Ue-hGJ"/>
-                                <include reference="ja6-RE-RSZ"/>
                                 <exclude reference="GD9-iO-aAY"/>
                                 <exclude reference="UKd-Tk-bvj"/>
                                 <exclude reference="XW6-Pe-EYj"/>
                                 <include reference="a0i-mv-PsG"/>
                                 <include reference="aHu-zz-r5h"/>
                                 <include reference="anE-Cp-HGF"/>
+                                <exclude reference="Vkv-2Q-v73"/>
+                                <include reference="Wfs-Ue-hGJ"/>
+                                <include reference="ja6-RE-RSZ"/>
+                                <exclude reference="12U-2s-zNR"/>
+                                <include reference="7xq-1m-hNq"/>
+                                <include reference="fem-5P-izz"/>
+                                <include reference="lGg-3x-eqK"/>
+                                <include reference="oUC-2w-kFc"/>
                                 <exclude reference="5Ar-j1-G7H"/>
                                 <exclude reference="DJq-47-FAe"/>
                                 <include reference="Hj6-Ov-un5"/>

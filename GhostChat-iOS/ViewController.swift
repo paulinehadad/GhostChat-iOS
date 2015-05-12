@@ -3,7 +3,9 @@
 //  GhostChat-iOS
 //
 //  Created by GrownYoda on 4/26/15.
-//  Copyright (c) 2015 yuryg. All rights reserved.
+//  Edited by Pauline Hadad on May 11 2015.
+//  Copyright (c) 2015 ph. All rights reserved.
+//  Pull refresh from github.com/dekatoro/PullToRefreshSwift
 //
 
 import UIKit
@@ -106,13 +108,13 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralMa
     func refreshArrays(){
         
         
-        fullPeripheralArray.removeAll(keepCapacity: false)
-        cleanAndSortedArray.removeAll(keepCapacity: false)
-        myPeripheralDictionary.removeAll(keepCapacity: false)
+      //  fullPeripheralArray.removeAll(keepCapacity: false)
+        //cleanAndSortedArray.removeAll(keepCapacity: false)
+      //  myPeripheralDictionary.removeAll(keepCapacity: false)
         
-        cleanAndSortedChatArray.removeAll(keepCapacity: false)
-        fullChatArray.removeAll(keepCapacity: false)
-        chatDictionary.removeAll(keepCapacity: false)
+       // cleanAndSortedChatArray.removeAll(keepCapacity: false)
+        //fullChatArray.removeAll(keepCapacity: false)
+        //chatDictionary.removeAll(keepCapacity: false)
         
         // display a clean table
         tableView.reloadData()
@@ -407,7 +409,8 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralMa
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
+        let nameString = nameField.text
+        let textString = myTextField.text
         
         if (indexPath.section == 0) {
             // Configure the cell...
@@ -415,12 +418,24 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralMa
             cell.textLabel?.text = "\(cleanAndSortedChatArray[indexPath.row].2)"
             cell.detailTextLabel?.text = cleanAndSortedChatArray[indexPath.row].1
             
+            if (nameString == "Username" && textString == "Type a message") {
+                cell.textLabel!.text = ""
+            }
+            else {
+            
+            cell.textLabel!.text = "From \(nameString!): \(textString!)"
+            
+            }
             return cell
             
         } else {
             
             // Configure the cell...
             let cell = tableView.dequeueReusableCellWithIdentifier("backgroundCell", forIndexPath: indexPath) as! UITableViewCell
+            
+    
+            
+            
             cell.textLabel?.text = "\(cleanAndSortedArray[indexPath.row].1)" + "  \(cleanAndSortedArray[indexPath.row].2)"
             cell.detailTextLabel?.text = cleanAndSortedArray[indexPath.row].3
             
@@ -431,10 +446,10 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralMa
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0{
-            return "Chat Activity"
+            return "Messages"
         }else if section == 1{
             tableView.sectionIndexColor = UIColor.darkGrayColor()
-            return "BackGround Devices"
+            return "Devices Around"
         } else {
             return "Misc"
         }
