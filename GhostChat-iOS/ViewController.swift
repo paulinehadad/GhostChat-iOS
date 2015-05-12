@@ -49,6 +49,8 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralMa
 
     @IBAction func sendButtonPressed(sender: UIButton) {
         advertiseNewName(myTextField.text)
+        self.nameField.resignFirstResponder()
+        self.myTextField.resignFirstResponder()
 
     }
     
@@ -398,7 +400,7 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralMa
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         
-        return 2
+        return 3
         
     }
     
@@ -423,24 +425,13 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralMa
             let cell = tableView.dequeueReusableCellWithIdentifier("chatCell", forIndexPath: indexPath) as! UITableViewCell
             cell.textLabel?.text = "\(cleanAndSortedChatArray[indexPath.row].2)"
             cell.detailTextLabel?.text = cleanAndSortedChatArray[indexPath.row].1
-            
-            if (nameString == "Username" && textString == "Type a message") {
-                cell.textLabel!.text = ""
-            }
-            else {
-            
-            cell.textLabel!.text = "From \(nameString!): \(textString!)"
-            
-            }
+        
             return cell
-            
+        
         } else {
             
             // Configure the cell...
             let cell = tableView.dequeueReusableCellWithIdentifier("backgroundCell", forIndexPath: indexPath) as! UITableViewCell
-            
-    
-            
             
             cell.textLabel?.text = "\(cleanAndSortedArray[indexPath.row].1)" + "  \(cleanAndSortedArray[indexPath.row].2)"
             cell.detailTextLabel?.text = cleanAndSortedArray[indexPath.row].3
