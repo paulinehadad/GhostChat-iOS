@@ -5,6 +5,8 @@
 
 # Screen Shot
 ![ScreenShot](https://github.com/paulinehadad/GhostChat-iOS/blob/master/Screen%20Gif.gif) 
+![ScreenShot](https://github.com/paulinehadad/GhostChat-iOS/blob/master/Screen%20Gif%202.gif)
+![ScreenShot](https://github.com/paulinehadad/GhostChat-iOS/blob/master/Landscape%20Gif.gif)
 
 # Code Runs On:
 + iOS 8.3+
